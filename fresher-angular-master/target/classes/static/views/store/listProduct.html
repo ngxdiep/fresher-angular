@@ -1,0 +1,30 @@
+<di>
+<h2>{{productlist}}</h2>
+<p>{{error}}</p>
+<table class="table">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Year</th>
+			<th>Price</th>
+			<th>Producer</th>
+			<th>Available</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="product in products">
+			<td><a ng-href="#/mainstore/{{product.id}}" />{{product.name | uppercase}}</td>
+			<td>{{product.year}}</td>
+			<td>{{product.price | currency}}</td>
+			<td>{{product.producer}}</td>
+			<td><button ng-click="increaseData(product.id)"
+				class="glyphicon glyphicon-plus btn btn-sm btn-success"></button>
+				<div>{{product.available | number}}</div> 
+				<button ng-click="decreaseData(product.id)"
+				class="glyphicon glyphicon-minus btn btn-sm btn-warning"></button>
+			<td><button ng-click="" class="glyphicon glyphicon-trash btn btn-danger"></button></td>
+		</tr>
+	</tbody>
+</table>
+</div>

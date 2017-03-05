@@ -1,0 +1,49 @@
+<style>
+.form-control.ng-touched.ng-invalid {
+	border-color: #a94442;
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	background-color: #a94442;
+}
+
+.form-control.ng-touched.ng-valid {
+	background-color: #fff;
+	border: 1px solid #ccc;
+}
+
+p.rq {
+	color: #a94442;
+}
+</style>
+
+<div class="container">
+	<h2>Add new product</h2>
+	<form name="userForm" ng-submit="submitForm()" novalidate>
+		<div class="form-group">
+			<label for="model">Name:</label> 
+			<input type="text" name="model" class="form-control" id="name" ng-model="product.name" required>
+		</div>
+		<div class="form-group">
+			<label for="name">Model:</label>
+			<input type="text" class="form-control" id="model" ng-model="model" ng-required="true">
+		</div>
+		<div class="form-group">
+			<label for="year">Year:</label>
+			<input type="text" class="form-control" id="year" ng-model="product.year" required>
+		</div>
+		<div class="form-group">
+			<label for="price">Price:</label>
+			<input type="number" class="form-control" id="price" ng-model="product.price" required>
+		</div>
+		<div class="form-group">
+			<label for="producer">Producer:</label>
+			<input type="text" class="form-control" id="producer" ng-model="product.producer" required>
+		</div>
+		<div class="form-group">
+			<label for="available">Available:</label>
+			<input type="number" class="form-control" id="available" ng-model="product.available" required>
+		</div>
+		<button type="submit" ng-click="addProduct()" class="btn btn-default">Add</button>
+		<button ng-click="getAllProduct()" class="btn btn-default">Search All</button>
+	</form>
+	<my-customer></my-customer>
+</div>
